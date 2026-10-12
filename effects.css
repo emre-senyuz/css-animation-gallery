@@ -1,0 +1,99 @@
+/* demo:pulse */
+/* Pulse: a soft expanding halo makes a steady status indicator. */
+.pulse-dot { display: block; width: 40px; height: 40px; background: #64805b; border-radius: 50%; animation: pulse 2.8s ease-out infinite; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 #64805b00; } 35% { box-shadow: 0 0 0 18px #64805b25; } 75% { box-shadow: 0 0 0 32px #64805b00; } }
+/* end-demo */
+
+/* demo:bounce */
+/* Bounce: coordinated ball and shadow curves suggest weight. */
+.preview-bounce .stage { position: relative; }
+.bounce-ball { width: 40px; height: 40px; background: #db7850; border-radius: 50%; animation: bounce 1.8s ease-in-out infinite; z-index: 1; }
+.bounce-shadow { position: absolute; width: 40px; height: 7px; top: calc(50% + 33px); border-radius: 50%; background: #ab684a30; animation: bounce-shadow 1.8s ease-in-out infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(12px) scale(1.08, .92); } 50% { transform: translateY(-35px) scale(.97, 1.03); } }
+@keyframes bounce-shadow { 50% { transform: scale(.55); opacity: .4; } }
+/* end-demo */
+
+/* demo:spin */
+/* Spin: an open ring turns at a constant, unhurried speed. */
+.spin-ring { display: block; width: 57px; height: 57px; border: 3px solid #82729b30; border-top-color: #82729b; border-right-color: #82729b; border-radius: 50%; animation: spin 2.4s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+/* end-demo */
+
+/* demo:shimmer */
+/* Shimmer: a low-contrast highlight travels across a skeleton card. */
+.skeleton { width: 205px; padding: 18px; background: #ffffffa6; border: 1px solid #ffffff; border-radius: 9px; display: flex; flex-wrap: wrap; gap: 12px; }
+.shimmer-surface { background: #d9e0e3; position: relative; overflow: hidden; }
+.shimmer-surface::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 20%, #ffffff90 50%, transparent 80%); animation: shimmer 2.6s ease-in-out infinite; }
+.skeleton-avatar { width: 33px; height: 33px; border-radius: 50%; }
+.skeleton-lines { flex: 1; display: grid; align-content: center; gap: 7px; }
+.skeleton-lines i { display: block; height: 7px; border-radius: 4px; }
+.skeleton-lines i:last-child { width: 65%; }
+.skeleton-wide { width: 100%; height: 30px; border-radius: 4px; }
+@keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+/* end-demo */
+
+/* demo:float */
+/* Float: a gentle vertical drift gives the card a little lift. */
+.float-card { width: 170px; padding: 18px; border-radius: 9px; background: #fffef9; box-shadow: 0 15px 24px -15px #4a5f4360; transform: rotate(-5deg); animation: float 4s ease-in-out infinite; }
+.float-card > span { color: #68855b; display: block; font-size: 30px; margin-bottom: 10px; }
+.float-card b { display: block; font: 600 12px Arial, sans-serif; }
+.float-card small { display: block; font: 9px Arial, sans-serif; color: #73766b; margin-top: 6px; }
+@keyframes float { 50% { transform: translateY(-13px) rotate(-2deg); } }
+/* end-demo */
+
+/* demo:gradient */
+/* Gradient: a large color field drifts slowly behind readable text. */
+.gradient-tile { width: 190px; height: 117px; padding: 20px; border-radius: 10px; background: linear-gradient(120deg, #773b61, #a64025, #704789, #34576e); background-size: 300% 300%; color: #fff; display: flex; justify-content: space-between; font: 500 27px/1.1 Arial, sans-serif; letter-spacing: -1px; animation: gradient-shift 9s ease-in-out infinite; }
+@keyframes gradient-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+/* end-demo */
+
+/* demo:typewriter */
+/* Typewriter: stepped clipping reveals 13 characters, then holds. */
+.typewriter-text { font: 19px/1.5 monospace; white-space: nowrap; overflow: hidden; width: 13ch; border-right: 2px solid #82729b; animation: typewriter 5.2s steps(13, end) infinite; }
+@keyframes typewriter { 0%, 12% { clip-path: inset(0 100% 0 0); } 60%, 90% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 100% 0 0); } }
+/* end-demo */
+
+/* demo:reveal */
+/* Reveal: add .is-visible to the preview when it enters the viewport. */
+.reveal-content { padding: 20px; width: 190px; background: #ffffffb0; border: 1px solid #fff; border-radius: 8px; }
+.reveal-content span { display: block; color: #577e8e; font-size: 28px; margin-bottom: 10px; }
+.reveal-content b { display: block; font: 600 13px Arial, sans-serif; }
+.reveal-content small { display: block; font: 10px Arial, sans-serif; margin-top: 7px; color: #68757a; }
+.preview-reveal.is-visible .reveal-content { animation: reveal .95s cubic-bezier(.2,.7,.3,1) both; }
+@keyframes reveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+/* end-demo */
+
+/* demo:stagger */
+/* Stagger: staggered delays give three small cards a shared rhythm. */
+.stagger-group { display: flex; gap: 10px; }
+.stagger-group span { display: grid; place-items: center; width: 54px; height: 75px; background: #fffef9; border: 1px solid #d6ddcb; border-radius: 7px; color: #64805b; font: 13px monospace; animation: stagger 4s ease-in-out infinite; }
+.stagger-group span:nth-child(2) { animation-delay: .22s; }
+.stagger-group span:nth-child(3) { animation-delay: .44s; }
+@keyframes stagger { 0%, 70%, 100% { transform: translateY(8px); opacity: .45; } 25%, 50% { transform: translateY(-8px); opacity: 1; } }
+/* end-demo */
+
+/* demo:lift */
+/* Hover lift: keyboard focus and pointer hover share the same response. */
+.lift-card { border: 1px solid #e1cfc1; border-radius: 9px; background: #fff9f2; color: #805438; padding: 25px 20px; font: 12px Arial, sans-serif; box-shadow: 0 3px 0 #dac5b4; transition: transform .35s ease, box-shadow .35s ease; cursor: pointer; }
+.lift-card span { margin-left: 12px; }
+.lift-card:hover, .lift-card:focus-visible { transform: translateY(-9px); box-shadow: 0 14px 20px -8px #80543845; }
+@media (prefers-reduced-motion: reduce) { .lift-card:hover, .lift-card:focus-visible { transform: none; } }
+/* end-demo */
+
+/* demo:orbit */
+/* Orbit: opposite dots travel together around a stationary center. */
+.orbit-track { position: relative; width: 112px; height: 112px; border: 1px solid #82729b40; border-radius: 50%; }
+.orbit-center { position: absolute; inset: 0; display: grid; place-items: center; font-size: 30px; color: #82729b; }
+.orbit-arm { position: absolute; inset: -1px; animation: orbit 7s linear infinite; }
+.orbit-arm i { position: absolute; width: 13px; height: 13px; top: calc(50% - 6.5px); left: -6px; border-radius: 50%; background: #82729b; }
+.orbit-arm i:last-child { left: auto; right: -6px; width: 9px; height: 9px; top: calc(50% - 4.5px); background: #baabc9; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+/* end-demo */
+
+/* demo:underline */
+/* Underline: a line grows from the left on hover or keyboard focus. */
+.underline-link { position: relative; border: 0; background: transparent; padding: 8px 0; color: #3b6577; font: 14px Arial, sans-serif; cursor: pointer; }
+.underline-link span { margin-left: 10px; }
+.underline-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: currentColor; transform: scaleX(.14); transform-origin: left; transition: transform .45s cubic-bezier(.2,.7,.3,1); }
+.underline-link:hover::after, .underline-link:focus-visible::after { transform: scaleX(1); }
+/* end-demo */

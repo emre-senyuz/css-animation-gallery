@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Twelve handcrafted CSS animations. Explore, pause, and copy the CSS for your next interface." />
+    <title>Motion Supply — CSS Animation Gallery</title>
+    <script type="module" src="/script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">m.</span>motion supply<span class="brand-dot">®</span></a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">◐ <span>Dark mode</span></button>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="eyebrow"><span></span> A LITTLE MOVEMENT. A LOT OF CHARACTER.</div>
+        <h1 id="page-title">Good interfaces<br />have <em>good moves.</em></h1>
+        <div class="intro-bottom"><p>A small collection of handcrafted CSS effects.<br />Find your rhythm. Grab the code. Make it yours.</p><span class="edition">VOL. 001 <span> / </span> THE ESSENTIALS</span></div>
+      </section>
+      <section aria-label="Animation collection">
+        <div class="collection-bar"><div class="collection-title">The collection <span>12 effects</span></div><label class="motion-control"><input id="reduced-motion" type="checkbox" role="switch" /><span class="switch-track" aria-hidden="true"></span>Reduced motion</label></div>
+        <p id="motion-note" class="motion-note">Motion follows your system preference until you change the switch.</p>
+        <div id="gallery" class="gallery"></div>
+      </section>
+      <section class="closing"><span aria-hidden="true">✳</span><p>Small details.<br /><strong>Better experiences.</strong></p><div>Pure CSS. Zero dependencies at runtime.<br />Built to be taken apart.</div></section>
+    </main>
+    <footer><span>motion supply / CSS animation gallery</span><span>Made for the details.</span></footer>
+    <div id="status" class="sr-only" role="status" aria-live="polite"></div>
+    <dialog id="copy-dialog"><h2>Copy this effect</h2><p>Clipboard unavailable. Select and copy the CSS below.</p><textarea aria-label="Effect CSS" readonly></textarea><button id="close-dialog">Done</button></dialog>
+  </body>
+</html>
